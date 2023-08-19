@@ -1,9 +1,42 @@
-import React from 'react'
+import React from "react";
+import "./order.css";
+import moment from "moment";
+import CheckoutProduct from "../../components/selectedProduct/SelectedProduct";
+import CurrencyFormat from "react-currency-format";
+function Order({ order }) {
+  // console.log(order);
 
-const Order = () => {
   return (
-    <div>Order</div>
-  )
+    <div className="order">
+      <h2>Order</h2>
+      <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
+      <p className="order__id">
+        <small>{order.id}</small>
+      </p>
+      {order.data.basket?.map((item, i) => (
+        <CheckoutProduct
+          id={item.id}
+          title={item.title}
+          image={item.image}
+          price={item.price}
+          rating={item.rating}
+          hideButton
+          //if there is no unique key, there will be warning in console. So we can have i(index) as a unique key
+          key={i}
+        />
+      ))}
+      <CurrencyFormat
+        renderText={(value) => (
+          <h3 className="order__total">Order Total: {value}</h3>
+        )}
+        decimalScale={2}
+        value={order.data.amount / 100}
+        displayType={"text"}
+        thousandSeparator={true}
+        prefix={"$"}
+      />
+    </div>
+  );
 }
 
-export default Order
+export default Order;
