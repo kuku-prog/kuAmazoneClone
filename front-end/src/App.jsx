@@ -44,7 +44,7 @@ function App() {
 
         <Route path='/checkout' element={
           <>
-            <Header /><Checkout /><Footer />
+            <Header /><Checkout />
           </>
         } />
          <Route path='/payment' element={
