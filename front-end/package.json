@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "front-end",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,8 +14,13 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.5",
+    "@stripe/react-stripe-js": "^2.1.2",
+    "@stripe/stripe-js": "^2.1.0",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.1",
     "firebase": "^10.2.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0"
   },
