@@ -39,6 +39,8 @@ const Header = () => {
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
+      // handleSignOut();
+        // navigator('/');
     } else { 
       navigator('/login');
     }

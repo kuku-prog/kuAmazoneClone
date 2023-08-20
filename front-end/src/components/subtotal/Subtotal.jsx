@@ -5,7 +5,7 @@ import { useStateValue } from "../../stateprovider";
 import { Link } from 'react-router-dom';
 
 function Subtotal() {
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket,user }, dispatch] = useStateValue();
     const getBasketTotal = (basket) => {
     return basket?.reduce((amount, item) => {
       return parseFloat(item.price) + amount;
@@ -31,7 +31,7 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <Link to= '/payment'>
+      <Link to={ user? '/payment':'/login'  }>
       <button  className='btn btn-warning mt-3 mb-3 center'>  Process to checkout</button>
       </Link>
       </div>
