@@ -41,7 +41,7 @@ const reducer = (state, action) => {
         ...state,
         user: {
           email: action.email,
-          userId: action.userId,
+            uid: action.userId,
         },
       };
 

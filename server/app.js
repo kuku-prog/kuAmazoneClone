@@ -18,6 +18,7 @@ app.post("/payments/create", async (req, res) => {
 			amount: parseInt(total),
 			currency: "usd",
 		});
+		console.log(paymentIntent.client_secret);
 		res.send({
 			clientSecret: paymentIntent.client_secret,
 		});
