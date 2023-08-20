@@ -14,10 +14,13 @@ const Login = () => {
     e.preventDefault();
     auth
       .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
+      .then((authUser) => {
+        console.log(authUser.user.email);
+        console.log(authUser.user.uid);
         dispatch({
           type: "SET_USER",
-          user: email
+          email: authUser.user.email,
+          userId: authUser.user.uid
         });
         navigate('/');
       })
@@ -28,14 +31,13 @@ const Login = () => {
     e.preventDefault();
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        if (auth) {
-          dispatch({
-            type: "SET_USER",
-            user: email
-          });
-          navigate('/');
-        }
+      .then((authUser) => {
+        dispatch({
+          type: "SET_USER",
+          email: authUser.user.email,
+          userId: authUser.user.uid
+        });
+        navigate('/');
       })
       .catch((error) => console.log(error.message));
   };

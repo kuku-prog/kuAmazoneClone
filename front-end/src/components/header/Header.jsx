@@ -4,7 +4,7 @@ import { useStateValue } from "../../stateprovider";
 import axios from "axios";
 
 import './header.css'
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //icons
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
@@ -14,17 +14,14 @@ import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import PlaceIcon from "@mui/icons-material/Place";
 import { color } from "@mui/system";
 
-
 const Header = () => {
   const [{ basket, user }, dispatch] = useStateValue();
   const [city, setCity] = useState();
   const [postal, setPostal] = useState();
   const navigator = useNavigate();
 
-  //setting current city and posal using api
-  useEffect(() => {
-    
-    //base url  // https://ipinfo.io/json?token={key}
+  // setting current city and postal using api
+  useEffect(() => {    
     axios
       .get("https://ipinfo.io/json?token=9792e4a0d74241")
       .then((response) => {
@@ -34,38 +31,33 @@ const Header = () => {
   }, []);
 
 
-    const scrollToTop = () => {
-      window.scrollTo(0, 0);
-    };
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
-    // check if the user is login and logout
-  const handleAuthenticaton = () => {
+  // check if the user is logged in and handle authentication
+  const handleAuthentication = () => {
     if (user) {
-      //its a method from firebase that signs out a signed in user
       auth.signOut();
-
-    }
-    else { 
+    } else { 
       navigator('/login');
     }
   };
 
-  const handlesignOut = () => {
-      dispatch({
-            type: "SET_USER",
-          user: null
-      })
+  const handleSignOut = () => {
+    dispatch({
+      type: "SET_USER",
+      user: null
+    });
   }
 
-  // console.log(city,postal);
-  //   console.log(user);
   return (
-   <div className="header">
+    <div className="header">
       <Link to="/">
         <img
           className="header__logo"
           src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt="Amazon  Logo"
+          alt="Amazon Logo"
           onClick={scrollToTop}
         />
       </Link>
@@ -74,7 +66,7 @@ const Header = () => {
       </div>
       <div className="header__option">
         <span className="header__optionLineOne">
-          Deliver to {!user ? "you" : user}
+          Deliver to {!user ? "you" : user.email}
         </span>
         <span className="header__optionLineTwo">
           {city} {postal}
@@ -88,12 +80,12 @@ const Header = () => {
 
       <div className="header__nav">
         <Link to={!user && "/login"} className="header__clearLink">
-          <div onClick={handleAuthenticaton} className="header__option">
+          <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
-              Hello {!user ? "Guest" : user}
+              Hello {!user ? "Guest" : user.email}
             </span>
             <span className="header__optionLineTwo">
-              {user ? "Sign out" : "Sign in"}
+              {user ? "Sign Out" : "Sign In"}
             </span>
           </div>
         </Link>
@@ -122,11 +114,9 @@ const Header = () => {
             </span>
           </div>
         </Link>
-
-       
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
