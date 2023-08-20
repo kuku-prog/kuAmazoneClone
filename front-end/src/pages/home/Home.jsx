@@ -35,7 +35,67 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
         <div>
-                    <Container fluid className="home__rowContainer">
+          <Container fluid className="home__rowContainer">
+             <Row className="home__row">
+              <Col sm="12" md="6" lg="3">
+                <Product
+                  id="22321341"
+                  title="Eureka Home Lightweight Stick Vacuum Cleaner, Powerful Suction Corded Multi-Surfaces, 3-in-1 "
+                  price={9640}
+                  rating={5}
+                  image="https://m.media-amazon.com/images/I/517R7MrmXiL._AC_UL400_.jpg"
+                />
+              </Col>
+              <Col sm="12" md="6" lg="3">
+                <Product
+                  id="22321344"
+                  title="Echo Dot (4th Gen, 2020 release) | Smart speaker with Alexa | Charcoal"
+                  price={58.98}
+                  rating={5}
+                  image="https://m.media-amazon.com/images/I/51cGlUCK5WL._AC_UL400_.jpg"
+                />
+              </Col>
+              <Col sm="12" md="6" lg="3">
+                <Product
+                  id="142321342"
+                  title="Herdio 4 Inch Outdoor Speakers Indoor Wall Mount Speakers "
+                  price={11.96}
+                  rating={5}
+                  image="https://m.media-amazon.com/images/I/713wp2XrATL._AC_SL1500_.jpg"
+                />
+              </Col>
+                <Col sm="12" md="6" lg="3">
+                 <Product
+                    id="12321341"
+                    title="Flygo Womens Fleece 2 Piece Outfits Sweatsuit Casual Half Zip Pullover Sweatshirt Joggers Tracksuit Set"
+                    price={13.96}
+                    rating={5}
+                    image="https://m.media-amazon.com/images/I/81x5S0+wH9L._AC_UL400_.jpg"
+                  />
+              </Col>
+            </Row>
+           
+             <Row className="home__row">
+              <Col sm="6">
+                <Product
+                            id="23445930"
+                            title="Acer Aspire 5 A515-56-36UT, 15.6' Full HD Display, 11th Gen Intel Core i3-1115G4 Processor, 4GB DDR4, 128GB ..."
+                            price={389.99}
+                            rating={5}
+                            image="https://m.media-amazon.com/images/I/71233PTgAjL._AC_UL480_FMwebp_QL65_.jpg"
+                        />
+                       
+              </Col>
+              <Col sm="6">
+                <Product
+                            id="3254354345"
+                            title="Logitech G502 HERO High Performance Wired Gaming Mouse, HERO 25K Sensor, 25,600 DPI, RGB, Adjustable ..."
+                            price={58.99}
+                            rating={4}
+                            image="https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_UL480_FMwebp_QL65_.jpg"
+                        />
+            </Col>
+            </Row>
             <Row className="home__row">
               <Col sm="12" md="6" lg="3">
                 <Product
@@ -135,16 +195,26 @@ const Home = () => {
             </Row>
 
             <Row className="home__row">
-              <Col sm="12">
+              <Col sm="6">
                 <Product
                   id="90829332"
-                  title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
-                  price={1094.98}
+                  title="Summer Outfits for Women, Women V Neck Textured Graphic Shirt Plus Size Dressy Business Blouse Tops"
+                  price={14.98}
                   rating={4}
-                  image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
+                  image="https://m.media-amazon.com/images/I/71SlP+7dpAL._AC_UL400_.jpg"
                 />
               </Col>
+              <Col sm="6">
+                <Product
+                  id="95829332"
+                  title="Columbia Women's Benton Springs Full Zip0"
+                  price={24.98}
+                  rating={3}
+                  image="https://m.media-amazon.com/images/I/71F2tjW19JS._AC_UL400_.jpg"
+                />
+            </Col>
             </Row>
+            
           </Container>
         </div>
       </div>
